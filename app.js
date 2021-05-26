@@ -12,10 +12,7 @@ function computerPlay() {
 }
 
 function playRound(playerSelection, computerSelection) {
-  let playerScore = 0;
-  let computerScore = 0;
-
-  if (playerSelection == computerSelection) {
+  if (playerSelection === computerSelection) {
     return "It's a tie!";
   } else if (
     (playerSelection === "rock" && computerSelection === "scissors") ||
@@ -34,6 +31,7 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
+let playerScore = 0;
+let computerScore = 0;
 const playerSelection = prompt("Make your choice!", "").toLowerCase();
 const computerSelection = computerPlay();
-console.log(playRound(playerSelection, computerSelection));
