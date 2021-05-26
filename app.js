@@ -15,33 +15,22 @@ function playRound(playerSelection, computerSelection) {
   let playerScore = 0;
   let computerScore = 0;
 
-  if (playerSelection === "rock" && computerSelection === "paper") {
-    console.log("p: " + playerSelection + " c: " + computerSelection);
-    computerScore++;
-    return `You lose! ${computerSelection} beats ${playerSelection}`;
-  } else if (playerSelection === "rock" && computerSelection === "scissors") {
-    console.log("p: " + playerSelection + " c: " + computerSelection);
-    playerScore++;
-    return `You win! ${playerSelection} beats ${computerSelection}`;
-  } else if (playerSelection === "paper" && computerSelection === "rock") {
-    console.log("p: " + playerSelection + " c: " + computerSelection);
-    playerScore++;
-    return `You win! ${playerSelection} beats ${computerSelection}`;
-  } else if (playerSelection === "paper" && computerSelection === "scissors") {
-    console.log("p: " + playerSelection + " c: " + computerSelection);
-    computerScore++;
-    return `You lose! ${computerSelection} beats ${playerSelection}`;
-  } else if (playerSelection === "scissors" && computerSelection === "rock") {
-    console.log("p: " + playerSelection + " c: " + computerSelection);
-    computerScore++;
-    return `You lose! ${computerSelection} beats ${playerSelection}`;
-  } else if (playerSelection === "scissors" && computerSelection === "paper") {
-    console.log("p: " + playerSelection + " c: " + computerSelection);
-    playerScore++;
-    `You win! ${playerSelection} beats ${computerSelection}`;
-  } else if (playerSelection == computerSelection) {
-    console.log("p: " + playerSelection + " c: " + computerSelection);
+  if (playerSelection == computerSelection) {
     return "It's a tie!";
+  } else if (
+    (playerSelection === "rock" && computerSelection === "scissors") ||
+    (playerSelection === "paper" && computerSelection === "rock") ||
+    (playerSelection === "scissors" && computerSelection === "paper")
+  ) {
+    playerScore++;
+    return `You win this round! ${playerSelection} beats ${computerSelection}`;
+  } else if (
+    (playerSelection === "rock" && computerSelection === "paper") ||
+    (playerSelection === "paper" && computerSelection === "scissors") ||
+    (playerSelection === "scissors" && computerSelection === "rock")
+  ) {
+    computerScore++;
+    return `You lose this round! ${computerSelection} beats ${playerSelection}`;
   }
 }
 
