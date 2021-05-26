@@ -37,7 +37,6 @@ function game() {
   for (let i = 0; i < 5; i++) {
     let playerSelection = prompt("Make your choice!", "").toLowerCase();
     let computerSelection = computerPlay();
-    playRound(playerSelection, computerSelection);
     console.log(playRound(playerSelection, computerSelection));
   }
 
