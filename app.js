@@ -20,6 +20,7 @@ function playRound(playerSelection, computerSelection) {
     (playerSelection === "scissors" && computerSelection === "paper")
   ) {
     playerScore++;
+    console.log("You: " + playerScore);
     return `You win this round! ${playerSelection} beats ${computerSelection}`;
   } else if (
     (playerSelection === "rock" && computerSelection === "paper") ||
@@ -27,11 +28,29 @@ function playRound(playerSelection, computerSelection) {
     (playerSelection === "scissors" && computerSelection === "rock")
   ) {
     computerScore++;
+    console.log("CPU: " + computerScore);
     return `You lose this round! ${computerSelection} beats ${playerSelection}`;
+  }
+}
+
+function game() {
+  for (let i = 0; i < 5; i++) {
+    let playerSelection = prompt("Make your choice!", "").toLowerCase();
+    let computerSelection = computerPlay();
+    playRound(playerSelection, computerSelection);
+    console.log(playRound(playerSelection, computerSelection));
+  }
+
+  if (playerScore === computerScore) {
+    console.log("It's a tie! " + playerScore + " to " + computerScore);
+  } else if (playerScore < computerScore) {
+    console.log("CPU wins! " + computerScore + " to " + playerScore);
+  } else if (playerScore > computerScore) {
+    console.log("You win! " + playerScore + " to " + computerScore);
   }
 }
 
 let playerScore = 0;
 let computerScore = 0;
-const playerSelection = prompt("Make your choice!", "").toLowerCase();
-const computerSelection = computerPlay();
+
+game();
