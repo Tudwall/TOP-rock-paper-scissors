@@ -3,10 +3,11 @@ let playerScore = 0;
 let computerScore = 0;
 
 // Selectors.
-const choiceButtons = document.querySelectorAll(".choice");
+const choiceBtns = document.querySelectorAll(".choice");
 const rockBtn = document.querySelector("#rock");
 const paperBtn = document.querySelector("#paper");
 const scissorsBtn = document.querySelector("#scissors");
+const resetBtn = document.querySelector("#reset");
 const score = document.querySelector("#score");
 const result = document.querySelector("#result");
 
@@ -65,7 +66,7 @@ function playRound(playerSelection, computerSelection) {
 
   if (playerScore == 5 || computerScore == 5) {
     declareWinner();
-    choiceButtons.forEach((button) => {
+    choiceBtns.forEach((button) => {
       button.disabled = true;
     });
   }
