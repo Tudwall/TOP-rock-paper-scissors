@@ -28,6 +28,16 @@ scissorsBtn.addEventListener("click", () => {
   playRound(playerSelection, computerSelection);
 });
 
+resetBtn.addEventListener("click", () => {
+  choiceBtns.forEach((button) => {
+    button.disabled = false;
+  });
+  playerScore = 0;
+  computerScore = 0;
+  score.textContent = "";
+  result.textContent = "";
+});
+
 // Functions.
 // Generate a choice for the computer
 function computerPlay() {
