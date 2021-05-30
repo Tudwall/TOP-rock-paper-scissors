@@ -4,9 +4,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="style.css">
     <title>Rock, paper, scissors</title>
 </head>
 <body>
+    <div id="container">
+        <h1>Rock, paper, scissors</h1>
+        <p>Make your choice! First to 5 wins!</p>
+
+        <div id="score-container">
+            <p id="score"></p>
+            <p id="result"></p>
+        </div>
+
+        <div id="game">
+            <button class="choice" id="rock"><img src="imgs/rock.svg" alt="A picture of a rock" title="rock"></button>
+            <button class="choice" id="paper"><img src="imgs/paper.svg" alt="A picture of a paper boat" title="paper"></button>
+            <button class="choice" id="scissors"><img src="imgs/scissors.svg" alt="A picture of scissors" title="scissors"></button>
+        </div>
+
+        <button id="reset" title="reset">Reset</button>
+    </div>
+
+    <footer>
+    <a href="https://github.com/Tudwall/rock-paper-scissors"><img src="imgs/GitHub-Mark-32px.png" alt="A link to the GitHub repository" title="made by Tudwall"></a>
+    </footer>
+
     <script src="app.js"></script>
 </body>
 </html>
