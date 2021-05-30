@@ -1,4 +1,9 @@
+// Variable declarations.
+let playerScore = 0;
+let computerScore = 0;
+
 // Selectors.
+const buttons = document.querySelectorAll("button");
 const rockBtn = document.querySelector("#rock");
 const paperBtn = document.querySelector("#paper");
 const scissorsBtn = document.querySelector("#scissors");
@@ -57,23 +62,23 @@ function playRound(playerSelection, computerSelection) {
     score.textContent = "You: " + playerScore + " CPU: " + computerScore;
     result.textContent = `You lose this round! ${computerSelection} beats ${playerSelection}`;
   }
-}
 
-function game() {
-  // for (let i = 0; i < 5; i++) {
-  //   let playerSelection = prompt("Make your choice!", "").toLowerCase();
-  //   let computerSelection = computerPlay();
-  //   console.log(playRound(playerSelection, computerSelection));
-  // }
-
-  if (playerScore === computerScore) {
-    result.textContent = "It's a tie! " + playerScore + " to " + computerScore;
-  } else if (playerScore < computerScore) {
-    result.textContent = "CPU wins! " + computerScore + " to " + playerScore;
-  } else if (playerScore > computerScore) {
-    result.textContent = "You win! " + playerScore + " to " + computerScore;
+  if (playerScore == 5 || computerScore == 5) {
+    declareWinner();
+    buttons.forEach((button) => {
+      button.disabled = true;
+    });
   }
 }
 
-let playerScore = 0;
-let computerScore = 0;
+function declareWinner() {
+  if (playerScore === computerScore) {
+    result.textContent = "It's a tie! " + playerScore + " to " + computerScore;
+  } else if (playerScore < computerScore) {
+    result.textContent =
+      "CPU wins the game! " + computerScore + " to " + playerScore;
+  } else if (playerScore > computerScore) {
+    result.textContent =
+      "You win the game! " + playerScore + " to " + computerScore;
+  }
+}
