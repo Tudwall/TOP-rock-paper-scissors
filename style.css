@@ -68,3 +68,9 @@ img {
   margin-right: auto;
   margin-bottom: 5%;
 }
+
+@media (min-height: 450px) {
+  #score-container {
+    margin-bottom: 15%;
+  }
+}a
