@@ -1,6 +1,6 @@
 # Rock, paper, scissors
 
-## The second project for The Odin Project
+## The second project for The Odin Project's Foundations path.
 
 The objective is to make a simple rock, paper, scissors game from vanilla JavaScript.
 
